@@ -1,18 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web-dep
+  name: web-argo
+  namespace: default
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: nginx
+      app: web-argo
   template:
     metadata:
-      name: nginx-pod
       labels:
-        app: nginx
+        app: web-argo
     spec:
       containers:
-      - name: nginx-con
-        image: oolralra/ipnginx:2
+      - name: web-argo
+        image: 123456789012.dkr.ecr.ap-northeast-2.amazonaws.com/web-argo:1  # <-- 처음에는 1번 버전
+        ports:
+        - containerPort: 80
