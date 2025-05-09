@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: web-argo
-        image: 973510907968.dkr.ecr.ap-northeast-2.amazonaws.com/web-argo:1  # <-- 처음에는 1번 버전
+        image: pse0403/spring:11
         ports:
         - containerPort: 80
